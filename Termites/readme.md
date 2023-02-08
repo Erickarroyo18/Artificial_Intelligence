@@ -14,7 +14,11 @@ mkdir classes
 javac -d ./classes -cp lib/core.jar:. termitas/Termitas.java
 java -cp ./classes:lib/core.jar termitas.Termitas
 ```
-Otros posibles comandos para windows 10 y jdk 17.0.5
+## Comandos alternativos
+De no funcionar los comandos anteriores, como lo fue en mi caso, usar los siguientes comandos, estos fueron probados
+en window 10 y jdk 17.0.5:
+```
  mkdir classes 
  javac -d ./classes -cp ".;lib/core.jar" .\termitas\Termitas.java
  java -cp ".;classes.;lib/core.jar" termitas.Termitas
+```

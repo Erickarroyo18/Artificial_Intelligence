@@ -36,6 +36,11 @@ public class Termitas extends PApplet {
     int termitas = 140; // Cantidad de termitas dentro del modelo.
     float densidad = 0.2f; // Proporcion de astilla en el modelo (con probabilidad de 0 a 1).
     ModeloTermitas modelo; // El objeto que representa el modelo de termitas.
+    /*
+     * El entorno que dejamos por default es análogo al de las pruebas contenidas en el pdf de las específicaciones
+     * de la práctica. Pues como mencione antes, si el atribudo *densidad* se iguala a *0.0f* en la ejecución
+     * no existe ninguna astilla, por lo que, de ser necesario modifique el valor de atributo directamante.
+     */
 
     /**
      * Configuración inicial de la applet.
@@ -149,7 +154,7 @@ public class Termitas extends PApplet {
          *                  -----------
          *                  | 0 | 1 | 2 |
          *                  |-----------|
-         *                  | 7 | | 3 |
+         *                  | 7 |   | 3 |
          *                  |-----------|
          *                  | 6 | 5 | 4 |
          *                  -----------
