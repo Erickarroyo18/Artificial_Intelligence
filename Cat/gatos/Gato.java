@@ -12,11 +12,9 @@ import java.util.LinkedList;
  * @author Vero
  */
 public class Gato {
-
     public static final int MARCA1 = 1; // Número usado en el tablero del gato para marcar al primer jugador.
     public static final int MARCA2 = 4; // Se usan int en lugar de short porque coincide con el tamaÃ±o de la palabra,
                                         // el código se ejecuta ligeramente más rápido.
-
     int[][] tablero = new int[3][3]; // Tablero del juego
     Gato padre; // Quién generó este estado.
     LinkedList<Gato> sucesores; // Posibles jugadas desde este estado.
@@ -145,16 +143,15 @@ public class Gato {
      * @return LinkedList
      */
     public LinkedList<Gato> filtrarS(LinkedList<Gato> list) {
+        LinkedList<Gato> filterList = new LinkedList<>();
         for (int i = 0; i < list.size(); i++) {
             Gato aux = list.get(i);
-            for (int j = i + 1; j < list.size(); j++) {
-                if (aux.equals(list.get(j))) {
-                    list.remove(j);
-                    i = 0;
-                }
-            }
+            if (filterList.isEmpty())
+                filterList.add(aux);
+            if(!exist(filterList, aux))
+                filterList.add(aux);
         }
-        return list;
+        return filterList;
     }
 
     /**
@@ -193,18 +190,10 @@ public class Gato {
         if (list == null || list.isEmpty())
             return false;
         for (Gato i : list) {
-            return (i.equals(b)) ? true : false;
+            if (i.equals(b))
+                return true;
         }
         return false;
-    }
-
-    /** Eliminar */
-    public void print() {
-        if (this.sucesores == null || this.sucesores.isEmpty())
-            return;
-        for (Gato i : this.sucesores) {
-            System.out.println(i.toString() + "\n=============");
-        }
     }
 
     // ------- *** ------- *** -------
