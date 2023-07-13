@@ -1,0 +1,11 @@
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10961805&assignment_repo_type=AssignmentRepo)
+# Red Neuronal
+
+La práctica se desarrolló en google colab, por lo que se recomienda probar el documento en el mismo. En el desarrollo de la práctica surguieron algunos errores como: *RuntimeError: Expected scalar type Long but found float*, el cual como se menciona en el documento, no fue posible solucionar este error. Esto implicó la disminución de la tasa de aprendizaje, así como el valor de la métrica de evaluación utilizada (*exactitud*).
+
+# Análisis de problemas
+Como ya se menciono antes, en el desarrollo de la práctica surguieron algunos errores. Tales que, estos impidieron la mejora del rendimiento de los modelos (se especifican en el documento *ipynb*). 
+En particular, para el ejercicio tres podemos observar un valor de métrica no mayor al 64% y no menor al 50%. Esto se le atribuye a la función de perdida utilizada. Pues, se consideraron entradas adicionales para el entrenamiento y multiples estructuras.
+Ahora, consideremos que el porcentaje de exactitud aceptable para un modelo de clasificación dependerá del contexto y los requisitos específicos del problema que se esté abordando. Como desarrollador principiante, considereo que un modelo con una precisión del 60% para clasificación binaria puede ser un punto de partida aceptable. Sin embargo, es importante tener en cuenta que una precisión del 60% significa que el modelo todavía está clasificando incorrectamente el 40% de los datos de prueba, lo que puede ser un porcentaje significativo en algunos casos.
+Por tanto, me dí a la tarea de mejorar la exactitud del modelo por medio de algunos pasos, tales como: modificar el conjunto de entrenamiento, ajuste de los hyperparámetros, restructuración de la red neuronal e inserción de características de entrada adicionales. 
+Comprendo que esta tarea es importante, pero también tengo otras responsabilidades que requieren mi atención. Además, creo que el nivel de dificultad de esta tarea puede ser demasiado alto para mi nivel actual de conocimiento y experiencia. ¿Podríamos discutir la posibilidad de recibir orientación o apoyo adicional para abordar la tarea de manera efectiva?

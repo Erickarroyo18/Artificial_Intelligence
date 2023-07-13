@@ -43,6 +43,6 @@ public class Main {
 
     public static void main(String[] args) {
         Main m = new Main();
-        m.algoritmoGenetico(8, 50, 1000);// Prueba de documento
+        m.algoritmoGenetico(11, 50, 1000);// Prueba de documento
     }
 }

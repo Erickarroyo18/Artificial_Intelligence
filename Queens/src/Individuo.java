@@ -23,7 +23,7 @@ public class Individuo {
      */
     public void mutacion() {
         for (int i = 0; i < this.dimension; i++) {
-            this.estado[i] = ((Math.random() * 9) < 2) ? (int) (Math.random() * this.dimension) : this.estado[i];
+            this.estado[i] = ((Math.random() * 10) < 2) ? (int) (Math.random() * this.dimension) : this.estado[i];
         }
     }
 

@@ -9,7 +9,7 @@ public class Poblacion {
     ArrayList<Individuo> poblacion = new ArrayList<>();
     ArrayList<Individuo> normalizados = new ArrayList<>();
     Individuo elite = new Individuo(0, this.dimension);
-    int proporcionRC, dimension;
+    int proporcionRC, dimension, fitnessOptimo;
 
     /**
      * Constructor de clase
@@ -19,6 +19,7 @@ public class Poblacion {
      */
     public Poblacion(int n, int d) {
         this.dimension = d;
+        this.fitnessOptimo = d*10;
         if (n != 0) {
             this.generarPoblacion(n);
         }
@@ -74,7 +75,7 @@ public class Poblacion {
      * @return int
      */
     public int aptitudIndividuo(Individuo ind, int fila, int columna) {
-        int aptitud = 80;
+        int aptitud = this.fitnessOptimo;
         if (this.diagonalAsc(ind, fila, columna)) {
             aptitud -= 10;
         }
@@ -284,7 +285,7 @@ public class Poblacion {
 
     public boolean optimoEncontrado() {
         for (Individuo i : this.poblacion) {
-            if (i.fitness == 80)
+            if (i.fitness == this.fitnessOptimo)
                 return true;
         }
         return false;
@@ -297,7 +298,7 @@ public class Poblacion {
      */
     public Individuo getOptimo() {
         for (Individuo i : this.poblacion) {
-            if (i.fitness == 80)
+            if (i.fitness == this.fitnessOptimo)
                 return i;
         }
         return null;
